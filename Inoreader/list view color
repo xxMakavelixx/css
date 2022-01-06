@@ -1,0 +1,11 @@
+.ar.article_unreaded {
+    background: #033
+}
+
+#sinner_container,
+.leaderboard_ad,
+.ar_ad,
+.block_article_ad,
+.ad_title_centered {
+    display: none !important;
+}
