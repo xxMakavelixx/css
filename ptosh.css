@@ -1,0 +1,47 @@
+    /*全体の色およびテーブル幅*/
+    html body {
+        background: #15202b;
+        color: white;
+    }
+
+    html body div#cover.container, td {
+        background: #15202b;
+        color: white;
+    }
+
+/* 保存ボタン・データセンターに送信 */
+input[name="commit"]{
+        background: #70246B;
+        color: white;
+    }
+
+
+/* 一時保存ボタン */
+input[name="save"] {
+        background: #5a6268;
+        color: white;
+    }
+
+
+    .table th,.table td {
+        padding: 0.05rem;
+    }
+
+    /*登録箇所のサイズ*/
+    #new_registration_sheet.new_registration_sheet {
+        font-size: 14px;
+    }
+
+    /*ヘッダーおよびフッター*/
+    #header {
+        padding: 0.005rem;
+    }
+
+    #footer {
+        display: none !important;
+    }
+
+    /*テーブル縦罫線消去*/
+    table tr td {
+        border-right: none !important;
+    }
