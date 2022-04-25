@@ -4,26 +4,65 @@
         color: white;
     }
 
-    html body div#cover.container, td {
+    html body div#cover.container,
+    td {
         background: #15202b;
         color: white;
     }
 
-/* 保存ボタン・データセンターに送信 */
-input[name="commit"]{
+    /* 症例一覧の背景 */
+    #cover {
+        background: #1d1f20;
+    }
+
+    /* 症例一覧メニュー */
+    #menu {
+        background: #1d1f20;
+    }
+
+    #search_diagnosis_on,
+    #search_initial,
+    #disease_suggest,
+    #number,
+    #search_birth_date,
+    #search_dead_confirmed_on,
+    #search_card_number {
+        background: #e9e9ed;
+    }
+
+
+    /* カレンダー背景 */
+    #ui-datepicker-div {
+        background: #801569;
+    }
+
+    .ui-datepicker.ui-widget.ui-widget-content.ui-helper-clearfix.ui-corner-all div.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all {
+        background: #801569;
+    }
+
+
+    /* 保存ボタン・データセンターに送信 */
+    input[name="commit"] {
         background: #70246B;
         color: white;
     }
 
 
-/* 一時保存ボタン */
-input[name="save"] {
-        background: #5a6268;
-        color: white;
+    /* コメントカラー */
+    tr.comment td pre {
+        background: #15202b;
+        color: #FFF;
     }
 
 
-    .table th,.table td {
+    /* 一時保存ボタン */
+    input[name="save"] {
+        background: #5a6268;
+        color: #FFF;
+    }
+
+    .table th,
+    .table td {
         padding: 0.05rem;
     }
 
