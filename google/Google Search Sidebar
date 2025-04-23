@@ -1,0 +1,329 @@
+/* ==UserStyle==
+@name               Google Search Sidebar by claude 2025/04/23
+@namespace          jmln.tw
+@version            0.5.1
+@description        A user script and user style to move Google search tools to sidebar.
+@author             Jimmy Lin (Updated for 2025)
+@license            MIT
+@homepageURL        https://github.com/jmlntw/google-search-sidebar
+@supportURL         https://github.com/jmlntw/google-search-sidebar/issues
+==/UserStyle== */
+@namespace url(http://www.w3.org/1999/xhtml);
+
+@-moz-document regexp("^https:\/\/(?:ipv4|ipv6|www)\.google\.(?:[a-z\.]+)\/search\?(?!(?:.+&)?tbm=lcl(?:&.+)?).+$") {
+  /** CSS Variables **/
+  :root {
+    --user-sidebar-width: 180px;
+    --user-sidebar-spacer: 20px;
+    --user-sidebar-primary-color: #dd4b39;
+    --user-action-menu-spacer: 2px;
+    --user-action-menu-background: rgba(0, 0, 0, 0.1);
+    --user-action-menu-font-size: 85%;
+    --user-content-left-margin: 160px;
+    /* コンテンツエリアの左側マージン */
+    --user-sidebar-left-position: 180px;
+    /* サイドバーの左端位置 */
+  }
+
+  /** Navigation Bar **/
+  /**
+   * 1. Hide "Tools" toggle button on the navigation bar.
+   * 2. Updated selector for 2025 Google UI
+   */
+  #hdtb-tls,
+  [id^="tools_"],
+  [data-ved] > div[role="button"]:has(span:contains("ツール")) {
+    display: none !important;
+    /* 1. */
+  }
+
+  /** Search Menu **/
+  /**
+   * 1. Reset all CSS properties of the search menu wrapper.
+   * 2. Show the search menu wrapper in the proper position.
+   * 3. Updated to support 2025 Google UI structure
+   * 4. サイドバーの位置を右に調整
+   */
+  #hdtbMenus,
+  #top_nav #hdtbMenus {
+    all: unset !important;
+    /* 1. */
+    display: block !important;
+    /* 2. */
+    position: absolute !important;
+    /* 2. */
+    z-index: 3 !important;
+    /* Enhanced visibility */
+    left: var(--user-sidebar-left-position) !important;
+    /* サイドバーを右に移動 */
+  }
+
+  /**
+   * 1. Reset all CSS properties of the search menu parent.
+   * 2. Place search menus vertically.
+   * 3. Set the gap space between each search menu.
+   * 4. Updated selectors for 2025 Google UI
+   */
+  #hdtbMenus div[id^="tn_"][id$="_1"],
+  #top_nav #hdtbMenus > div {
+    all: unset !important;
+    /* 1. */
+    display: flex !important;
+    /* 2. */
+    flex-direction: column !important;
+    /* 2. */
+    gap: var(--user-sidebar-spacer) !important;
+    /* 3. */
+  }
+
+  /**
+   * 1. Remove the leading space of the search menu wrapper.
+   * 2. Updated for 2025 Google UI
+   */
+  #hdtbMenus div[id^="tn_"][id$="_1"] > div:nth-child(1),
+  #top_nav #hdtbMenus > div > div:empty {
+    display: none !important;
+    /* 1. */
+  }
+
+  /**
+   * 1. Hide the menu toggle button.
+   * 2. Reset all CSS properties of the dropdown menu.
+   * 3. Show the dropdown menu in the proper position.
+   * 4. Set the sidebar width with paddings.
+   * 5. Updated for 2025 Google UI
+   */
+  #hdtbMenus div[id^="tn_"][id$="_1"] g-popup > div:nth-child(1),
+  #top_nav #hdtbMenus g-popup > [role="button"] {
+    display: none !important;
+    /* 1. */
+  }
+
+  #hdtbMenus div[id^="tn_"][id$="_1"] g-popup > div:nth-child(2),
+  #top_nav #hdtbMenus [jsname][style*="display:none"]:not([aria-hidden]) {
+    all: unset !important;
+    /* 2. */
+    display: block !important;
+    /* 3. */
+    position: static !important;
+    /* 3. */
+    width: calc(var(--user-sidebar-width) - 20px) !important;
+    /* 4. */
+    max-width: calc(var(--user-sidebar-width) - 20px) !important;
+    /* 4. */
+    box-shadow: none !important;
+    /* Remove unwanted shadow */
+  }
+
+  /**
+   * 1. Remove the check image on the active menu item.
+   * 2. Set the styles of the active menu item.
+   * 3. Updated selectors for 2025 Google UI
+   */
+  #hdtbMenus div[id^="tn_"][id$="_1"] g-menu-item.nvELY,
+  #top_nav #hdtbMenus g-menu-item [aria-checked="true"] {
+    background-image: unset !important;
+    /* 1. */
+    color: var(--user-sidebar-primary-color) !important;
+    /* 2. */
+    font-weight: bolder !important;
+    /* 2. */
+  }
+
+  /**
+   * Handle the date picker in the sidebar (2025 Google UI)
+   */
+  #top_nav #hdtbMenus g-popup:has(g-dialog) > [role="button"]:has(> div > [class*=" "]) {
+    display: block !important;
+    padding: unset !important;
+    line-height: unset !important;
+    white-space: normal !important;
+  }
+
+  #top_nav #hdtbMenus g-popup:has(g-dialog) > [role="button"]:has(> div > [class*=" "]) * {
+    padding: unset !important;
+    line-height: unset !important;
+    white-space: normal !important;
+  }
+
+  #top_nav #hdtbMenus g-popup:has(g-dialog) [role="button"] > div > [class*=" "] > span {
+    /* Hide dropdown arrow */
+    display: none !important;
+  }
+
+  /**
+   * 1. Set the styles of "Clear" menu item on the sidebar.
+   * 2. Updated selectors for 2025 Google UI
+   */
+  #hdtbMenus div[id^="tn_"][id$="_1"] > a.hdtb-mn-hd,
+  #top_nav #hdtbMenus > div > a.hdtb-mn-hd,
+  #top_nav #hdtbMenus > div > a[role="button"] {
+    padding: 4px 32px !important;
+    /* 1. */
+  }
+
+  #hdtbMenus div[id^="tn_"][id$="_1"] > a.hdtb-mn-hd:hover,
+  #top_nav #hdtbMenus > div > a.hdtb-mn-hd:hover,
+  #top_nav #hdtbMenus > div > a[role="button"]:hover {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+    /* 1. */
+    text-decoration: unset !important;
+    /* 1. */
+  }
+
+  /**
+   * 1. Fix the position of the label showing "About ***,*** results...".
+   * 2. Updated for 2025 Google UI
+   */
+  #appbar div.LHJvCe,
+  .appbar div[role="navigation"] + div {
+    top: unset !important;
+    /* 1. */
+    opacity: unset !important;
+    /* 1. */
+  }
+
+  /** Main Page Content **/
+  /**
+   * 1. Set the proper position of the main page content.
+   * 2. Updated selectors for 2025 Google UI
+   * 3. コンテンツエリアの左側マージンを調整
+   */
+  #appbar,
+  #center_col,
+  #rcnt div.M8OgIe,
+  #rcnt div[role="main"] {
+    margin-left: var(--user-content-left-margin) !important;
+    /* コンテンツエリアの左側マージンを調整 */
+  }
+
+  /**
+   * 1. Set the proper position of the right information block.
+   * 2. Updated for 2025 Google UI with fallback
+   */
+  #rhs,
+  #rhs_block {
+    margin-left: var(--rhs-margin, 20px);
+    /* 1. */
+  }
+
+  /**
+   * Do not move the right block to the bottom of the page if there's not enough
+   * space. Updated for 2025 Google UI
+   */
+  @supports (selector(:has(p))) {
+    #rcnt:has(#center_col: first-child + #rhs),
+    #rcnt:has(div[role="main"] + #rhs_block) {
+      flex-wrap: nowrap !important;
+    }
+  }
+
+  /** Action Menu **/
+  /**
+   * 1. Hide the dropdown arrow.
+   * 2. Updated selectors for 2025 Google UI
+   */
+  div.g g-popup > div,
+  div[data-ved] g-popup > div {
+    display: none !important;
+    /* 1. */
+  }
+
+  /**
+   * 1. Reset all CSS properties of the dropdown menu.
+   * 2. Show the dropdown menu in the proper position.
+   * 3. Updated selectors for 2025 Google UI
+   */
+  div.g div.pkWBse,
+  div[data-ved] div[jsaction] > div[jsname][style*="display:none"]:not([aria-hidden]) {
+    all: unset !important;
+    /* 1. */
+    display: inline-block !important;
+    /* 2. */
+  }
+
+  /**
+   * 1. Reset all CSS properties of the dropdown menu.
+   * 2. Place the menu item horizontally.
+   * 3. Set the gap space between each menu item.
+   * 4. Updated selectors for 2025 Google UI
+   */
+  div.g div.pkWBse g-menu,
+  div[data-ved] div[jsaction] > div[jsname] g-menu {
+    all: unset !important;
+    /* 1. */
+    display: flex !important;
+    /* 2. */
+    flex-direction: row !important;
+    /* 2. */
+    gap: var(--user-action-menu-spacer) !important;
+    /* 3. */
+  }
+
+  div.g div.pkWBse g-menu-item,
+  div[data-ved] div[jsaction] > div[jsname] g-menu-item {
+    all: unset !important;
+    /* 1. */
+  }
+
+  div.g div.pkWBse g-menu-item > div,
+  div[data-ved] div[jsaction] > div[jsname] g-menu-item > div {
+    all: unset !important;
+    /* 1. */
+  }
+
+  /**
+   * 1. Set the styles of the dropdown menu item.
+   * 2. Updated selectors for 2025 Google UI
+   */
+  div.g div.pkWBse g-menu-item a,
+  div[data-ved] div[jsaction] > div[jsname] g-menu-item a {
+    padding: 0 5px !important;
+    /* 1. */
+    background-color: var(--user-action-menu-background) !important;
+    /* 1. */
+    font-size: var(--user-action-menu-font-size) !important;
+    /* 1. */
+  }
+
+  /**
+   * Hide search time on sidebar
+   * Updated for 2025 Google UI
+   */
+  #result-stats > nobr,
+  div[id^="result-stats"] > nobr,
+  #result-stats > span:last-child {
+    display: none !important;
+  }
+
+  /**
+   * Ensure menu items in sidebar have proper spacing
+   * New for 2025 Google UI
+   */
+  #top_nav #hdtbMenus g-menu-item {
+    background: unset !important;
+  }
+
+  #top_nav #hdtbMenus g-menu-item > * > * {
+    padding: unset !important;
+  }
+
+  #top_nav #hdtbMenus g-menu-item:hover {
+    text-decoration: underline !important;
+  }
+
+  /**
+   * Handle "AI Overview" or any new elements in the layout
+   * New for 2025 Google UI
+   * コンテンツエリアの左側マージンを調整
+   */
+  div[data-attrid="wa:/description"],
+  div[data-ved] > div[jscontroller][data-ved] {
+    margin-left: var(--user-content-left-margin) !important;
+  }
+
+  .BOThhc {
+
+    display: none !important;
+  }
+}
