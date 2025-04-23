@@ -1,23 +1,23 @@
     /*全体の色およびテーブル幅*/
     html body {
-        background: #15202b;
-        color: white;
+      background: #15202b;
+      color: white;
     }
 
     html body div#cover.container,
     td {
-        background: #15202b;
-        color: white;
+      background: #15202b;
+      color: white;
     }
 
     /* 症例一覧の背景 */
     #cover {
-        background: #1d1f20;
+      background: #1d1f20;
     }
 
     /* 症例一覧メニュー */
     #menu {
-        background: #1d1f20;
+      background: #1d1f20;
     }
 
     #search_diagnosis_on,
@@ -27,60 +27,80 @@
     #search_birth_date,
     #search_dead_confirmed_on,
     #search_card_number {
-        background: #e9e9ed;
+      background: #e9e9ed;
     }
 
 
     /* カレンダー背景 */
     #ui-datepicker-div {
-        background: #801569;
+      background: #801569;
     }
 
     .ui-datepicker.ui-widget.ui-widget-content.ui-helper-clearfix.ui-corner-all div.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all {
-        background: #801569;
+      background: #801569;
     }
 
 
     /* 保存ボタン・データセンターに送信 */
     input[name="commit"] {
-        background: #70246B;
-        color: white;
+      background: #70246B;
+      color: white;
     }
 
 
     /* コメントカラー */
     tr.comment td pre {
-        background: #15202b;
-        color: #FFF;
+      background: #15202b;
+      color: #FFF;
     }
 
 
     /* 一時保存ボタン */
     input[name="save"] {
-        background: #5a6268;
-        color: #FFF;
+      background: #5a6268;
+      color: #FFF;
     }
 
     .table th,
     .table td {
-        padding: 0.05rem;
+      padding: 0.05rem;
     }
 
     /*登録箇所のサイズ*/
     #new_registration_sheet.new_registration_sheet {
-        font-size: 14px;
+      font-size: 14px;
     }
 
     /*ヘッダーおよびフッター*/
     #header {
-        padding: 0.005rem;
+      padding: 0.005rem;
     }
 
     #footer {
-        display: none !important;
+      display: none !important;
     }
 
     /*テーブル縦罫線消去*/
     table tr td {
-        border-right: none !important;
+      border-right: none !important;
+    }
+
+/* カレンダー設定 */
+    .ui-datepicker-title {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      /* 中央揃え */
+      align-items: center;
+      /* 垂直方向の中央揃え */
+    }
+
+    .ui-datepicker-title select.ui-datepicker-year {
+      margin-right: 0.5em;
+      /* 年と月の間のスペース */
+    }
+
+    .ui-datepicker-title select.ui-datepicker-month {
+      margin-left: 0.5em;
+      /* 年と月の間のスペース */
     }
