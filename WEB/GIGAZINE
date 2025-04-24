@@ -1,0 +1,75 @@
+/* ==UserStyle==
+@name           Minimal Gigazine
+@namespace      custom
+@author         ChatGPT (再構成)
+@description    Gigazine をミニマルな表示にします
+@version        2025.04.24
+@license        MIT
+==/UserStyle== */
+
+/* タイトルのフォントサイズ調整 */
+  .content section h2 a span {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  /* 本文と引用部分の文字サイズ調整 */
+  .cntimage blockquote,
+  .preface,
+  .article {
+    font-size: 0.95em;
+  }
+
+  .cntimage .yeartime {
+    font-size: 0.8em;
+  }
+
+  /* 非表示にしたい要素群（サイドバー、フッターなど） */
+  #main > #latest,
+  #main > #sub,
+  #G_EF,
+  .rlcontents-s,
+  #next-prev,
+  .followbeta,
+  .items,
+  footer,
+  .social-button,
+  .sbn,
+  #EndFooter,
+  .rlcontents,
+  #Google_BOT,
+  #subtop {
+    display: none !important;
+  }
+
+  /* 記事本文のレイアウト調整 */
+  #article .cntimage,
+  .article {
+    margin: 0 auto;
+    max-width: 800px;
+  }
+
+  .cntimage img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* 日付やカテゴリのフォントサイズ調整 */
+  .date time,
+  .catab {
+    font-size: 0.75em;
+  }
+
+  .date {
+    height: 1.1em;
+  }
+
+  .content section h2 a {
+    height: 3.2em;
+  }
+
+  /* ロゴサイズ調整 */
+  .logo svg {
+    width: 205px;
+    height: 60px;
+  }
