@@ -1,106 +1,167 @@
-    /*全体の色およびテーブル幅*/
-    html body {
-      background: #15202b;
-      color: white;
-    }
+@-moz-document domain("ptosh.com") {
+/*全体の色およびテーブル幅*/
+html body {
+  background: #282a36; /* Dracula background */
+  color: #f8f8f2; /* Dracula foreground */
+}
 
-    html body div#cover.container,
-    td {
-      background: #15202b;
-      color: white;
-    }
+html body div#cover.container,
+td {
+  background: #282a36; /* Dracula background */
+  color: #f8f8f2; /* Dracula foreground */
+}
 
-    /* 症例一覧の背景 */
-    #cover {
-      background: #1d1f20;
-    }
+/* 症例一覧の背景 */
+#cover {
+  background: #44475a; /* Dracula current-line (少し濃いめの背景) */
+}
 
-    /* 症例一覧メニュー */
-    #menu {
-      background: #1d1f20;
-    }
+/* 症例一覧メニュー */
+#menu {
+  background: #44475a; /* Dracula current-line */
+}
 
-    #search_diagnosis_on,
-    #search_initial,
-    #disease_suggest,
-    #number,
-    #search_birth_date,
-    #search_dead_confirmed_on,
-    #search_card_number {
-      background: #e9e9ed;
-    }
+#search_diagnosis_on,
+#search_initial,
+#disease_suggest,
+#number,
+#search_birth_date,
+#search_dead_confirmed_on,
+#search_card_number {
+  background: #f8f8f2; /* Dracula foreground (明るい背景) */
+  color: #282a36; /* Dracula background (文字色) */
+}
+
+/* カレンダー背景 */
+#ui-datepicker-div {
+  background: #bd93f9; /* Dracula purple */
+  color: #282a36; /* Dracula background (文字色) */
+}
+
+.ui-datepicker.ui-widget.ui-widget-content.ui-helper-clearfix.ui-corner-all div.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all {
+  background: #bd93f9; /* Dracula purple */
+  color: #f8f8f2; /* Dracula foreground (文字色) */
+}
+
+/* 保存ボタン・データセンターに送信 */
+input[name="commit"] {
+  background: #ff79c6; /* Dracula pink */
+  color: #f8f8f2; /* Dracula foreground */
+  border: none; /* 必要に応じてボーダーを削除 */
+}
+
+/* コメントカラー */
+tr.comment td pre {
+  background: #282a36; /* Dracula background */
+  color: #6272a4; /* Dracula comment */
+}
+
+/* 一時保存ボタン */
+input[name="save"] {
+  background: #6272a4; /* Dracula comment */
+  color: #f8f8f2; /* Dracula foreground */
+  border: none; /* 必要に応じてボーダーを削除 */
+}
+
+.table th,
+.table td {
+  padding: 0.05rem;
+  border-color: #44475a; /* Dracula current-line (区切り線) */
+}
+
+/*登録箇所のサイズ*/
+#new_registration_sheet.new_registration_sheet {
+  font-size: 14px;
+}
+
+/*ヘッダーおよびフッター*/
+#header {
+  padding: 0.005rem;
+  background: #282a36; /* Dracula background (必要であれば) */
+  color: #f8f8f2; /* Dracula foreground (必要であれば) */
+}
+
+#footer {
+  display: none !important;
+}
+
+/*テーブル縦罫線消去*/
+table tr td {
+  border-right: none !important;
+}
 
 
-    /* カレンダー背景 */
-    #ui-datepicker-div {
-      background: #801569;
-    }
+/* カレンダー設定 (変更なし) */
+.ui-datepicker-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* 中央揃え */
+  align-items: center;
+  /* 垂直方向の中央揃え */
+}
 
-    .ui-datepicker.ui-widget.ui-widget-content.ui-helper-clearfix.ui-corner-all div.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all {
-      background: #801569;
-    }
+.ui-datepicker-title select.ui-datepicker-year {
+  margin-right: 0.5em;
+  /* 年と月の間のスペース */
+}
 
-
-    /* 保存ボタン・データセンターに送信 */
-    input[name="commit"] {
-      background: #70246B;
-      color: white;
-    }
-
-
-    /* コメントカラー */
-    tr.comment td pre {
-      background: #15202b;
-      color: #FFF;
-    }
+.ui-datepicker-title select.ui-datepicker-month {
+  margin-left: 0.5em;
+  /* 年と月の間のスペース */
+}
 
 
-    /* 一時保存ボタン */
-    input[name="save"] {
-      background: #5a6268;
-      color: #FFF;
-    }
+/* 通常の日付セル */
+.ui-datepicker td a.ui-state-default {
+  background-color: #44475a !important; /* Draculaのgrayish背景 */
+  color: #f8f8f2 !important; /* 明るい白 */
+  border-radius: 4px; /* 柔らかさの演出 */
+}
 
-    .table th,
-    .table td {
-      padding: 0.05rem;
-    }
+/* 今日 */
+.ui-datepicker-today a {
+  background-color: #bd93f9 !important; /* パープル強調 */
+  color: #282a36 !important;
+  font-weight: bold !important;
+}
 
-    /*登録箇所のサイズ*/
-    #new_registration_sheet.new_registration_sheet {
-      font-size: 14px;
-    }
+/* 選択日 */
+.ui-datepicker td a.ui-state-active {
+  background-color: #ff79c6 !important; /* ピンクで選択感 */
+  color: #282a36 !important;
+  font-weight: bold !important;
+}
 
-    /*ヘッダーおよびフッター*/
-    #header {
-      padding: 0.005rem;
-    }
+/* ホバー */
+.ui-datepicker td a:hover {
+  background-color: #6272a4 !important; /* Draculaブルー */
+  color: #f8f8f2 !important;
+}
 
-    #footer {
-      display: none !important;
-    }
+/* 前月・次月の日付（無効） */
+.ui-datepicker .ui-datepicker-other-month,
+.ui-datepicker .ui-datepicker-unselectable {
+  background-color: transparent !important;
+  color: #6272a4 !important;
+}
 
-    /*テーブル縦罫線消去*/
-    table tr td {
-      border-right: none !important;
-    }
 
-/* カレンダー設定 */
-    .ui-datepicker-title {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      /* 中央揃え */
-      align-items: center;
-      /* 垂直方向の中央揃え */
-    }
 
-    .ui-datepicker-title select.ui-datepicker-year {
-      margin-right: 0.5em;
-      /* 年と月の間のスペース */
-    }
+/* 前月・次月のナビゲーション矢印（< と >） */
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+  color: #f8f8f2 !important; /* 明るい白 */
+  background-color: transparent !important;
+}
 
-    .ui-datepicker-title select.ui-datepicker-month {
-      margin-left: 0.5em;
-      /* 年と月の間のスペース */
-    }
+/* ホバー時の強調 */
+.ui-datepicker .ui-datepicker-prev:hover,
+.ui-datepicker .ui-datepicker-next:hover {
+  background-color: #6272a4 !important;
+  border-radius: 4px;
+  color: #f8f8f2 !important;
+  cursor: pointer;
+}
+
+}
