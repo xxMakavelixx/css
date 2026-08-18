@@ -1,0 +1,132 @@
+/* ==UserStyle==
+@name           ptosh.com　カレンダー
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    A new userstyle
+@author         Me
+==/UserStyle== */
+
+@-moz-document domain("ptosh.com") {
+  /* ここにコードを挿入... */
+  /* =================================*********
+   カレンダー全体（縦伸び徹底解消・ミニマル型）
+   ========================================= */
+#ui-datepicker-div {
+  background: #11151C !important;
+  color: #f8f8f2 !important;
+  border: 1px solid #44475a !important; /* 線を細くしてシャープに */
+  font-size: 13px !important;
+  width: 235px !important;               /* 横幅を235pxに固定 */
+  padding: 4px !important;               /* 外枠の余白を最小限に */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  line-height: 1.0 !important;           /* 縦の隙間を殺す */
+  z-index: 9999 !important;
+}
+
+/* カレンダーヘッダー（高さを極限まで低く） */
+.ui-datepicker .ui-datepicker-header {
+  background: #0F1115 !important;
+  color: #bd93f9 !important;
+  padding: 4px 0 !important;             /* 縦の厚みをカット */
+  border: none !important;
+  line-height: 1.0 !important;
+}
+
+/* 前月・次月ボタン（スリム化） */
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+  top: 2px !important;
+  padding: 2px 6px !important;
+  color: #ff79c6 !important;
+  background-color: transparent !important;
+}
+
+.ui-datepicker .ui-datepicker-prev:hover,
+.ui-datepicker .ui-datepicker-next:hover {
+  background-color: #6272a4 !important;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* 年月のプルダウン */
+.ui-datepicker-title {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: center !important;
+  height: 20px !important;               /* ヘッダー全体の高さを固定 */
+}
+
+.ui-datepicker-title select.ui-datepicker-year,
+.ui-datepicker-title select.ui-datepicker-month {
+  background: #0F1115 !important;
+  color: #f8f8f2 !important;
+  font-size: 12px !important;
+  padding: 0 2px !important;             /* プルダウン自体の縦余白をゼロに */
+  height: 18px !important;               /* プルダウンの縦幅を固定 */
+  margin: 0 2px !important;
+  border: 1px solid #44475a !important;
+  border-radius: 3px;
+}
+
+/* 曜日ヘッダー（隙間を詰める） */
+.ui-datepicker th {
+  padding: 4px 0 !important;             /* 上下の無駄な余白をカット */
+  color: #6272a4 !important;
+  font-size: 11px !important;
+  font-weight: bold !important;
+  line-height: 1.0 !important;
+}
+
+/* =================================*********
+   日付セル（縦伸びを潰してフラットなブロックに）
+   ========================================= */
+.ui-datepicker td {
+  padding: 1px !important;               /* セル同士の隙間を極小に */
+}
+
+/* 通常の日付ボタン（高さを完全固定） */
+.ui-datepicker td a.ui-state-default {
+  display: block !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
+  height: 24px !important;               /* 縦幅を24pxに完全固定（間伸び防止） */
+  line-height: 24px !important;          /* 文字をきっちり垂直中央に配置 */
+  padding: 0 !important;                 /* paddingによる縦伸びをリセット */
+  background-color: #0F1115 !important;
+  color: #f8f8f2 !important;
+  border: none !important;
+  border-radius: 3px !important;
+  font-size: 12px !important;            /* 視認性の良いジャストサイズ */
+  font-weight: 500 !important;
+}
+
+/* ホバー */
+.ui-datepicker td a:hover {
+  background-color: #6272a4 !important;
+  color: #ffffff !important;
+}
+
+/* 今日（高いコントラストで引き締め） */
+.ui-datepicker-today a {
+  background-color: #bd93f9 !important;
+  color: #000000 !important;
+  font-weight: bold !important;
+}
+
+/* 選択された日付 */
+.ui-datepicker td a.ui-state-active {
+  background-color: #ff79c6 !important;
+  color: #000000 !important;
+  font-weight: bold !important;
+}
+
+/* 前月・次月の日付 */
+.ui-datepicker .ui-datepicker-other-month,
+.ui-datepicker .ui-datepicker-unselectable {
+  background-color: transparent !important;
+  color: #282a36 !important;             /* さらに一段階暗くして完全に存在感を消す */
+}
+  
+  
+}
